@@ -1,7 +1,6 @@
 # ParkPulse AI
-## Transforming Parking Violations into Urban Mobility Intelligence
 
----
+*Transforming Parking Violations into Urban Mobility Intelligence*
 
 # Executive Summary
 
@@ -102,7 +101,7 @@ This intelligence gap results in:
 
 # Problem Statement
 
-# Poor Visibility on Parking-Induced Congestion
+Poor Visibility on Parking-Induced Congestion
 
 # Operational Challenge
 
@@ -371,74 +370,54 @@ Prioritization and recommendation system.
 
 Exploration of intervention strategies and congestion outcomes.
 
-
-
 # Application Walkthrough
 
 The following screenshots demonstrate how ParkPulse AI transforms raw parking violation records into actionable urban mobility intelligence.
 
----
-
 # Understanding the Problem
 
-# Parking-Induced Congestion Challenge
+*Parking-Induced Congestion Challenge**
 
 This view introduces the operational challenge faced by transportation authorities and highlights how illegal parking contributes to congestion, reduced roadway capacity, and inefficient enforcement.
 
-![Problem Statement](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/075445b8563a1e96b259c16a60154b778c4edaab/Images/Image_2_FK_The_Problem.png)
-
----
+![*Problem Statement*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/075445b8563a1e96b259c16a60154b778c4edaab/Images/Image_2_FK_The_Problem.png)
 
 # Solution Overview
 
-## ParkPulse AI Approach
+**ParkPulse AI Approach**
 
 This screen presents the overall solution architecture and explains how geospatial intelligence, congestion analytics, forecasting, and AI-generated recommendations work together.
 
-<p align="center">
-  <img src="docs/images/Image_4_FK_Approach.png" width="100%">
-</p>
-
----
+![*Problem Approach*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_4_FK_Approach.png)
 
 # Executive Command Center
 
-## City Operations Control Room
+*City Operations Control Room*
 
 Provides transportation operators with a city-wide operational overview of parking-induced congestion.
 
-<p align="center">
-  <img src="docs/images/Image_5_FK_Control_Room.png" width="100%">
-</p>
+![*Control Room Setup*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_5_FK_Control_Room.png)
 
-### Key Capabilities
+# Key Capabilities
 
 - Network-wide situational awareness
 - Congestion monitoring
 - Hotspot prioritization
 - Executive KPI tracking
 
----
-
 ## Executive Dashboard
 
 Consolidated visualization of violations, congestion severity, hotspot activity, and operational performance.
 
-<p align="center">
-  <img src="docs/images/Image_10_Executive_Page_1.png" width="100%">
-</p>
-
----
+![*Dashboard*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_8_Executive_Page_1.png)
 
 # Hotspot Intelligence
 
-## Geospatial Hotspot Detection
+*Geospatial Hotspot Detection*
 
 Visualizes parking violation concentrations using spatial clustering and geospatial analytics.
 
-<p align="center">
-  <img src="docs/images/Image_11_Hotsmap_Page_1.png" width="100%">
-</p>
+![*Geospatial Hotspot*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_11_Hotsmap_Page_1.png)
 
 ### Features
 
@@ -447,134 +426,89 @@ Visualizes parking violation concentrations using spatial clustering and geospat
 - Severity classification
 - Geographic prioritization
 
----
-
 # Predictive Intelligence
 
-## Forecast Dashboard
+*Forecast Dashboard*
 
 Provides forward-looking congestion intelligence based on historical parking behavior.
 
-<p align="center">
-  <img src="docs/images/Image_12_Prediction_Page_1.png" width="100%">
-</p>
-
----
+![*Forecasting Dashboard*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_12_Prediction_Page_1.png)
 
 ## Short-Term Congestion Forecasting
 
-Forecasts emerging hotspots and anticipated congestion escalation.
+*Forecasts emerging hotspots and anticipated congestion escalation*
 
-<p align="center">
-  <img src="docs/images/Image_13_Prediction_1a.png" width="100%">
-</p>
+![*Weekly Dashboard*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_13_Prediction_1a.png)
 
----
-
-## Trend Analysis & Risk Assessment
+*Trend Analysis & Risk Assessment*
 
 Supports proactive traffic management through predictive analytics.
 
-<p align="center">
-  <img src="docs/images/Image_14_Prediction_1b.png" width="100%">
-</p>
+![*Trend Analysis & Risk Assessment*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_15_Prediction_Page_2.png)
 
----
-
-## Long-Term Forecasting
+*Long-Term Forecasting*
 
 Projects hotspot evolution and enforcement demand over extended periods.
 
-<p align="center">
-  <img src="docs/images/Image_15_Prediction_Page_2.png" width="100%">
-</p>
-
----
+![*Long-Term Forecasting*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_14_Prediction_1b.png)
 
 # Enforcement Intelligence
 
-## Enforcement Operations Dashboard
+*Enforcement Operations Dashboard*
 
 Identifies high-priority zones requiring intervention and resource deployment.
 
-<p align="center">
-  <img src="docs/images/Image_16_Enforcement_Page_1.png" width="100%">
-</p>
+![*Enforcement Dashboard*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_16_Enforcement_Page_1.png)
 
----
-
-## AI Enforcement Briefing
+*AI Enforcement Briefing*
 
 Automatically generated operational intelligence report containing hotspot summaries, risk assessments, and recommended actions.
 
-<p align="center">
-  <img src="docs/images/Image_17_Enforcement_AI_Brief_Page_2.png" width="100%">
-</p>
-
----
+![*AI Enforcement Briefing*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_17_Enforcement_AI_Brief_Page_2.png)
 
 # Advanced Analytics
 
-## Analytics Dashboard
+*Analytics Dashboard*
 
 Provides deeper insight into parking behavior and congestion dynamics.
 
-<p align="center">
-  <img src="docs/images/Image_18_Analytics_Page_1.png" width="100%">
-</p>
+![*Analytics Dashboard*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_18_Analytics_Page_1.png)
 
----
-
-## Congestion Intelligence Analytics
+*Congestion Intelligence Analytics*
 
 Enables investigation of disruption patterns and operational risk.
 
-<p align="center">
-  <img src="docs/images/Image_19_Analytics_Page_2.png" width="100%">
-</p>
+![*Congestion Intelligence Analytics*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_19_Analytics_Page_2.png)
 
----
-
-## Spatial Performance Analytics
+*Spatial Performance Analytics*
 
 Evaluates hotspot evolution and enforcement effectiveness.
 
-<p align="center">
-  <img src="docs/images/Image_20_Analytics_Page_3.png" width="100%">
-</p>
-
----
+![*Spatial Performance Analytics*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_20_Analytics_Page_3.png)
 
 # Scenario Simulation
 
-## Intervention Simulator
+*Intervention Simulator*
 
 Allows transportation agencies to evaluate the impact of mitigation strategies before deployment.
 
-<p align="center">
-  <img src="docs/images/Image_21_Simulator_Page_1.png" width="100%">
-</p>
+![*Simulator*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_21_Simulator_Page_1.png)
 
-### Simulation Objectives
+*Simulation Objectives*
 
 - Capacity-loss estimation
 - Resource planning
 - Risk evaluation
 - Enforcement optimization
 
----
-
 # Data Ingestion & Processing
 
-## Dataset Upload Pipeline
+*Dataset Upload Pipeline*
 
 Supports ingestion, validation, and processing of parking violation datasets.
 
-<p align="center">
-  <img src="docs/images/Image_22_Ingest_Page_1.png" width="100%">
-</p>
+![*Data Ingestion*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_22_Ingest_Page_1.png)
 
----
 
 # End-to-End Operational Workflow
 
