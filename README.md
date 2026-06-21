@@ -2,6 +2,8 @@
 
 *Transforming Parking Violations into Urban Mobility Intelligence*
 
+[https://smart-parking-hub-44.preview.emergentagent.com/]
+
 # Executive Summary
 
 Urban congestion is commonly associated with increasing vehicle volumes, inadequate infrastructure, and inefficient traffic management. However, one of the most overlooked contributors to localized traffic disruption is illegal and spillover parking.
@@ -561,6 +563,10 @@ By transforming parking violations into actionable congestion intelligence, Park
 - Better urban mobility outcomes
 
 Ultimately, ParkPulse AI transforms parking enforcement from a reactive operational activity into an intelligence-driven mobility management system.
+
+# Link for the demo prototype 
+
+Link : [https://smart-parking-hub-44.preview.emergentagent.com/]
 
 # Contributors
 
