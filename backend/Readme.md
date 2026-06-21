@@ -232,14 +232,16 @@ Parking hotspots are identified using spatial clustering algorithms operating on
 
 Given a dataset of parking violations:
 
-```text
-X = {x₁, x₂, ..., xₙ}
+Given a dataset of parking violations:
+
+```math
+X = \{x_1, x_2, \ldots, x_n\}
 ```
 
 where:
 
-```text
-xᵢ = (latitudeᵢ, longitudeᵢ)
+```math
+x_i = (\text{latitude}_i,\ \text{longitude}_i)
 ```
 
 Each observation represents the spatial location of a parking violation event.
@@ -252,19 +254,25 @@ Density-Based Spatial Clustering of Applications with Noise (DBSCAN) identifies 
 
 Neighborhood definition:
 
-```text
-Nε(p) = { q ∈ X | d(p,q) ≤ ε }
+```math
+N_{\varepsilon}(p)
+=
+\left\{
+q \in X \; | \; d(p,q) \leq \varepsilon
+\right\}
 ```
 
 where:
 
-- ε = neighborhood radius
+- \( \varepsilon \) = neighborhood radius
 - MinPts = minimum density threshold
 
 A point is considered a core point when:
 
-```text
-|Nε(p)| ≥ MinPts
+```math
+\left|N_{\varepsilon}(p)\right|
+\geq
+\text{MinPts}
 ```
 
 Clusters are formed by recursively connecting density-reachable observations.
@@ -273,182 +281,259 @@ Clusters are formed by recursively connecting density-reachable observations.
 
 ### HDBSCAN Formulation
 
-Hierarchical Density-Based Spatial Clustering extends DBSCAN by supporting varying density distributions.
-
 Mutual reachability distance:
 
-```text
-dmreach(a,b) =
-max{
-    core(a),
-    core(b),
-    d(a,b)
-}
+```math
+d_{\mathrm{mreach}}(a,b)
+=
+\max \left\{
+\mathrm{core}(a),
+\mathrm{core}(b),
+d(a,b)
+\right\}
 ```
 
 where:
 
-- core(a) = core distance of point a
-- core(b) = core distance of point b
-- d(a,b) = Euclidean distance
+- \( \mathrm{core}(a) \) = core distance of point \( a \)
+- \( \mathrm{core}(b) \) = core distance of point \( b \)
+- \( d(a,b) \) = Euclidean distance between points \( a \) and \( b \)
 
-This formulation improves robustness when hotspot densities vary significantly across urban regions.
+This formulation enables robust clustering across regions exhibiting heterogeneous density distributions.
 
 ---
 
 ### MiniBatch K-Means Formulation
 
-MiniBatch K-Means partitions observations into K spatial clusters.
+MiniBatch K-Means partitions observations into \(K\) spatial clusters by minimizing the within-cluster variance.
 
 Cluster centroid estimation:
 
-```text
-μk = (1 / |Ck|) × Σ xi
-```
-
-for all:
-
-```text
-xi ∈ Ck
-```
-
-Optimization objective:
-
-```text
-J = Σk Σxi∈Ck ||xi − μk||²
+```math
+\mu_k
+=
+\frac{1}{|C_k|}
+\sum_{x_i \in C_k} x_i
 ```
 
 where:
 
-- μk = centroid of cluster k
-- Ck = cluster k
-- J = within-cluster sum of squared errors
+- \( \mu_k \) = centroid of cluster \(k\)
+- \( C_k \) = set of observations assigned to cluster \(k\)
 
-The objective is to minimize intra-cluster variance.
+The optimization objective is:
+
+```math
+J
+=
+\sum_{k=1}^{K}
+\sum_{x_i \in C_k}
+\left\|x_i-\mu_k\right\|^2
+```
+
+where:
+
+- \( J \) = within-cluster sum of squared errors (WCSS)
+- \( \|x_i-\mu_k\|^2 \) = squared Euclidean distance between observation \(x_i\) and centroid \(\mu_k\)
+
+The objective of the algorithm is to minimize:
+
+```math
+\underset{\{\mu_k\}_{k=1}^{K}}{\arg\min}
+\sum_{k=1}^{K}
+\sum_{x_i \in C_k}
+\left\|x_i-\mu_k\right\|^2
+```
+
+resulting in compact and spatially coherent parking hotspot clusters.
 
 ---
 
 ### Congestion Impact Score (CIS)
 
-Each hotspot is assigned a normalized congestion severity score.
+Each hotspot is assigned a normalized congestion severity score that quantifies the operational impact of parking violations on traffic flow.
 
-```text
-CIS =
-(w₁ × D)
+The Congestion Impact Score is computed as:
+
+```math
+\mathrm{CIS}
+=
+w_1D
 +
-(w₂ × P)
+w_2P
 +
-(w₃ × J)
+w_3J
 +
-(w₄ × R)
+w_4R
 ```
 
 where:
 
 | Variable | Description |
-|----------|-------------|
-| D | Violation Density |
-| P | Peak Hour Frequency |
-| J | Junction Criticality |
-| R | Repeat Offender Index |
+|-----------|-------------|
+| \(D\) | Violation Density |
+| \(P\) | Peak Hour Frequency |
+| \(J\) | Junction Criticality |
+| \(R\) | Repeat Offender Index |
 
-Subject to:
+and
 
-```text
-w₁ + w₂ + w₃ + w₄ = 1
+| Weight | Contribution |
+|---------|-------------|
+| \(w_1\) | Density Weight |
+| \(w_2\) | Peak Hour Weight |
+| \(w_3\) | Junction Criticality Weight |
+| \(w_4\) | Repeat Violation Weight |
+
+Subject to the normalization constraint:
+
+```math
+\sum_{i=1}^{4} w_i = 1
 ```
 
-Default weighting:
+The default weighting scheme is:
 
-```text
-[w₁, w₂, w₃, w₄]
+```math
+[w_1,w_2,w_3,w_4]
 =
-[0.40, 0.30, 0.20, 0.10]
+[0.40,\;0.30,\;0.20,\;0.10]
 ```
 
-Higher CIS values indicate greater disruption to traffic flow.
+such that:
 
----
+- 40% emphasis is placed on violation density.
+- 30% emphasis is placed on peak-hour disruption.
+- 20% emphasis is placed on junction criticality.
+- 10% emphasis is placed on repeat offender behavior.
+
+A larger CIS value indicates a greater disruption to roadway operations and a higher enforcement priority.
 
 ### Road Capacity Loss Estimation
 
-Road capacity degradation is estimated as:
+Road capacity degradation is quantified using the percentage reduction in the effective roadway width caused by illegally parked vehicles.
 
-```text
-Capacity Loss (%) =
-(Blocked Width / Available Width) × 100
+The Capacity Loss metric is defined as:
+
+```math
+\mathrm{Capacity\ Loss}
+=
+\frac{W_b}{W_a}
+\times 100
 ```
 
 where:
 
-- Blocked Width = roadway width occupied by illegally parked vehicles
-- Available Width = usable roadway width
+| Symbol | Description |
+|----------|-------------|
+| \(W_b\) | Blocked roadway width due to parking encroachment |
+| \(W_a\) | Total available roadway width |
 
-This metric quantifies the reduction in effective traffic carrying capacity.
+The resulting value represents the percentage of roadway capacity rendered unavailable to moving traffic.
+
+For example, if a roadway with an effective width of 10 meters experiences 2 meters of parking encroachment:
+
+```math
+\mathrm{Capacity\ Loss}
+=
+\frac{2}{10}
+\times 100
+=
+20\%
+```
+
+Higher Capacity Loss values indicate increased traffic friction, reduced lane availability, and a greater likelihood of localized congestion.
 
 ---
 
 ### Forecasting Framework
 
-Future congestion intensity is estimated using temporal and spatial features.
+Future congestion intensity is estimated using historical temporal and spatial characteristics of parking violations.
 
-Prediction model:
+The forecasting model is represented as:
 
-```text
-ŷ(t+k) = f(Xt)
+```math
+\hat{y}_{t+k}
+=
+f(X_t)
 ```
 
 where:
 
-```text
-Xt =
-{
-    hour,
-    day_of_week,
-    week_of_year,
-    violation_density,
-    hotspot_severity
-}
+| Symbol | Description |
+|----------|-------------|
+| \(\hat{y}_{t+k}\) | Predicted congestion intensity at future time \(t+k\) |
+| \(X_t\) | Feature vector observed at time \(t\) |
+| \(f(\cdot)\) | Forecasting model |
+| \(k\) | Forecast horizon |
+
+The input feature vector is defined as:
+
+```math
+X_t =
+\left\{
+\text{hour},
+\text{day\_of\_week},
+\text{week\_of\_year},
+\text{violation\_density},
+\text{hotspot\_severity}
+\right\}
 ```
 
-and:
+The forecasting objective is:
 
-```text
-k = forecasting horizon
+```math
+f:
+X_t
+\rightarrow
+\hat{y}_{t+k}
 ```
 
 Typical forecasting horizons include:
 
-```text
-1 Hour Ahead
-24 Hours Ahead
-7 Days Ahead
-```
+| Horizon | Description |
+|----------|-------------|
+| \(k = 1\) | One Hour Ahead |
+| \(k = 24\) | Twenty-Four Hours Ahead |
+| \(k = 168\) | Seven Days Ahead |
 
-The forecasting engine estimates future hotspot severity and congestion impact.
+The forecasting engine estimates future hotspot severity, expected congestion levels, and potential traffic disruption, enabling proactive enforcement and operational planning.
 
 ---
 
 ### Severity Classification
 
-Hotspots are categorized according to congestion impact score.
+Hotspots are categorized according to their Congestion Impact Score (CIS) to support operational decision-making and enforcement prioritization.
 
-```text
-0.00 ≤ CIS < 0.30  → Low
+The severity level is defined as:
 
-0.30 ≤ CIS < 0.60  → Moderate
-
-0.60 ≤ CIS < 0.80  → High
-
-0.80 ≤ CIS ≤ 1.00  → Critical
+```math
+\mathrm{Severity} =
+\begin{cases}
+\mathrm{Low}, & 0.00 \leq \mathrm{CIS} < 0.30 \\
+\mathrm{Moderate}, & 0.30 \leq \mathrm{CIS} < 0.60 \\
+\mathrm{High}, & 0.60 \leq \mathrm{CIS} < 0.80 \\
+\mathrm{Critical}, & 0.80 \leq \mathrm{CIS} \leq 1.00
+\end{cases}
 ```
+
+The corresponding operational interpretation is:
+
+| CIS Range | Severity Level | Operational Impact |
+|------------|---------------|-------------------|
+| 0.00 – 0.29 | Low | Minimal disruption to traffic flow |
+| 0.30 – 0.59 | Moderate | Localized congestion effects |
+| 0.60 – 0.79 | High | Significant reduction in roadway efficiency |
+| 0.80 – 1.00 | Critical | Severe congestion requiring immediate intervention |
 
 Severity classes support:
 
 - Enforcement prioritization
 - Resource allocation
 - Incident response planning
-- Executive reporting
+- Traffic operations management
+- Executive reporting and policy evaluation
+
+Higher severity levels indicate greater congestion impact and increased urgency for enforcement action.
 
 ---
 
