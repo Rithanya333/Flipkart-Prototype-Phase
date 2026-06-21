@@ -98,13 +98,13 @@ This intelligence gap results in:
 
 ---
 
-# Challenge Statement
+## Challenge Statement
 
-## Problem Statement
+# Problem Statement
 
-## Poor Visibility on Parking-Induced Congestion
+# Poor Visibility on Parking-Induced Congestion
 
-#### Operational Challenge
+# Operational Challenge
 
 On-street illegal parking and spillover parking near:
 
@@ -264,19 +264,19 @@ The real question is:
 
 To answer this, ParkPulse AI evaluates:
 
-## Density
+*Density*
 
 How concentrated are violations?
 
-## Temporal Activity
+*Temporal Activity*
 
 Do violations occur during peak traffic periods?
 
-## Network Criticality
+*Network Criticality*
 
 Does the hotspot occur near a critical intersection?
 
-## Recurrence
+*Recurrence*
 
 Does the behavior repeat consistently?
 
@@ -348,27 +348,27 @@ This allows decision-makers to move from dashboards to action quickly and confid
 
 The final platform consists of six integrated intelligence modules.
 
-# Executive Command Center
+*Executive Command Center*
 
 Provides a city-wide operational overview of parking-induced congestion.
 
-# Hotspot Intelligence Engine
+*Hotspot Intelligence Engine*
 
 Interactive geospatial hotspot visualization and analysis.
 
-# Congestion Analytics
+*Congestion Analytics*
 
 Quantification of traffic impact and roadway degradation.
 
-# Predictive Intelligence
+*Predictive Intelligence*
 
 Forecasting of future hotspot activity and risk.
 
-# Enforcement Intelligence
+*Enforcement Intelligence*
 
 Prioritization and recommendation system.
 
-# Scenario Simulator
+*Scenario Simulator*
 
 Exploration of intervention strategies and congestion outcomes.
 
@@ -382,7 +382,7 @@ The following screenshots demonstrate how ParkPulse AI transforms raw parking vi
 
 # Understanding the Problem
 
-## Parking-Induced Congestion Challenge
+# Parking-Induced Congestion Challenge
 
 This view introduces the operational challenge faced by transportation authorities and highlights how illegal parking contributes to congestion, reduced roadway capacity, and inefficient enforcement.
 
