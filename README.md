@@ -177,24 +177,24 @@ ParkPulse AI converts raw parking records into a decision-support system.
 
 ```mermaid
 flowchart LR
+    A["Parking Violation Records"]
+    B["Data Validation"]
+    C["Spatial Intelligence"]
+    D["Hotspot Discovery"]
+    E["Congestion Impact Analysis"]
+    F["Capacity Loss Estimation"]
+    G["Predictive Forecasting"]
+    H["AI Recommendations"]
+    I["Operational Dashboard"]
 
-    A[Parking Violation Records]
-
-    A --> B[Data Validation]
-
-    B --> C[Spatial Intelligence]
-
-    C --> D[Hotspot Discovery]
-
-    D --> E[Congestion Impact Analysis]
-
-    E --> F[Capacity Loss Estimation]
-
-    F --> G[Predictive Forecasting]
-
-    G --> H[AI Recommendations]
-
-    H --> I[Operational Dashboard]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
 ```
 
 # Understanding the City Through Data
