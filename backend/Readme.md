@@ -220,116 +220,133 @@ Generates natural-language intelligence summaries for:
 
 ---
 
-# Machine Learning Framework
+## Machine Learning Framework
 
-The analytics engine employs a hybrid geospatial intelligence framework consisting of density-based clustering, congestion scoring, and predictive analytics.
+The analytics engine employs a hybrid geospatial intelligence framework that combines density-based clustering, congestion impact modeling, and predictive analytics to identify and prioritize parking-induced traffic disruptions.
 
 ---
 
-## Spatial Hotspot Detection
+### Spatial Hotspot Detection
 
-Parking hotspots are identified using spatial clustering algorithms operating on geographic coordinates.
+Parking hotspots are identified using spatial clustering algorithms operating on geographic coordinates extracted from parking violation records.
 
-Given a set of parking violations:
+Given a dataset of parking violations:
 
-\[
-X = \{x_1, x_2, ..., x_n\}
-\]
+```text
+X = {x₁, x₂, ..., xₙ}
+```
 
-where each point represents:
+where:
 
-\[
-x_i = (latitude_i, longitude_i)
-\]
+```text
+xᵢ = (latitudeᵢ, longitudeᵢ)
+```
+
+Each observation represents the spatial location of a parking violation event.
 
 ---
 
 ### DBSCAN Formulation
 
-For each observation:
+Density-Based Spatial Clustering of Applications with Noise (DBSCAN) identifies clusters as dense regions separated by sparse regions.
 
-\[
-N_{\varepsilon}(p)
-=
-\{q \in X : d(p,q)\leq\varepsilon\}
-\]
+Neighborhood definition:
+
+```text
+Nε(p) = { q ∈ X | d(p,q) ≤ ε }
+```
 
 where:
 
-- \( \varepsilon \) = neighborhood radius
-- MinPts = density threshold
+- ε = neighborhood radius
+- MinPts = minimum density threshold
 
-Clusters are formed when:
+A point is considered a core point when:
 
-\[
-|N_{\varepsilon}(p)| \ge MinPts
-\]
+```text
+|Nε(p)| ≥ MinPts
+```
+
+Clusters are formed by recursively connecting density-reachable observations.
 
 ---
 
 ### HDBSCAN Formulation
 
+Hierarchical Density-Based Spatial Clustering extends DBSCAN by supporting varying density distributions.
+
 Mutual reachability distance:
 
-\[
-d_{mreach}(a,b)
-=
-\max
-\{
-core(a),
-core(b),
-d(a,b)
-\}
-\]
+```text
+dmreach(a,b) =
+max{
+    core(a),
+    core(b),
+    d(a,b)
+}
+```
 
-This formulation enables clustering under varying density conditions.
+where:
+
+- core(a) = core distance of point a
+- core(b) = core distance of point b
+- d(a,b) = Euclidean distance
+
+This formulation improves robustness when hotspot densities vary significantly across urban regions.
 
 ---
 
 ### MiniBatch K-Means Formulation
 
-Centroid estimation:
+MiniBatch K-Means partitions observations into K spatial clusters.
 
-\[
-\mu_k
-=
-\frac{1}{|C_k|}
-\sum_{x_i \in C_k}
-x_i
-\]
+Cluster centroid estimation:
+
+```text
+μk = (1 / |Ck|) × Σ xi
+```
+
+for all:
+
+```text
+xi ∈ Ck
+```
 
 Optimization objective:
 
-\[
-J
-=
-\sum_{k=1}^{K}
-\sum_{x_i \in C_k}
-\|x_i-\mu_k\|^2
-\]
+```text
+J = Σk Σxi∈Ck ||xi − μk||²
+```
+
+where:
+
+- μk = centroid of cluster k
+- Ck = cluster k
+- J = within-cluster sum of squared errors
+
+The objective is to minimize intra-cluster variance.
 
 ---
 
-## Congestion Impact Score
+### Congestion Impact Score (CIS)
 
-The congestion severity of each hotspot is computed as:
+Each hotspot is assigned a normalized congestion severity score.
 
-\[
-CIS
-=
-w_1D
+```text
+CIS =
+(w₁ × D)
 +
-w_2P
+(w₂ × P)
 +
-w_3J
+(w₃ × J)
 +
-w_4R
-\]
+(w₄ × R)
+```
 
 where:
 
 | Variable | Description |
-|-----------|------------|
+|----------|-------------|
 | D | Violation Density |
 | P | Peak Hour Frequency |
 | J | Junction Criticality |
@@ -337,84 +354,117 @@ where:
 
 Subject to:
 
-\[
-\sum_{i=1}^{4}w_i=1
-\]
+```text
+w₁ + w₂ + w₃ + w₄ = 1
+```
 
 Default weighting:
 
-\[
-[w_1,w_2,w_3,w_4]
+```text
+[w₁, w₂, w₃, w₄]
 =
-[0.4,0.3,0.2,0.1]
-\]
+[0.40, 0.30, 0.20, 0.10]
+```
+
+Higher CIS values indicate greater disruption to traffic flow.
 
 ---
 
-## Road Capacity Loss
+### Road Capacity Loss Estimation
 
 Road capacity degradation is estimated as:
 
-\[
-CapacityLoss
-=
-\frac{BlockedWidth}{AvailableWidth}
-\times100
-\]
+```text
+Capacity Loss (%) =
+(Blocked Width / Available Width) × 100
+```
 
 where:
 
-- BlockedWidth = obstructed roadway width
-- AvailableWidth = usable roadway width
+- Blocked Width = roadway width occupied by illegally parked vehicles
+- Available Width = usable roadway width
+
+This metric quantifies the reduction in effective traffic carrying capacity.
 
 ---
 
-## Forecasting Framework
+### Forecasting Framework
 
-Future congestion is estimated using historical mobility characteristics:
+Future congestion intensity is estimated using temporal and spatial features.
 
-\[
-\hat{y}_{t+k}
-=
-f(X_t)
-\]
+Prediction model:
+
+```text
+ŷ(t+k) = f(Xt)
+```
 
 where:
 
-\[
-X_t=
-\{
-hour,
-day,
-week,
-density,
-severity
-\}
-\]
+```text
+Xt =
+{
+    hour,
+    day_of_week,
+    week_of_year,
+    violation_density,
+    hotspot_severity
+}
+```
 
-and
+and:
 
-\[
-k
-=
-forecast\ horizon
-\]
+```text
+k = forecasting horizon
+```
+
+Typical forecasting horizons include:
+
+```text
+1 Hour Ahead
+24 Hours Ahead
+7 Days Ahead
+```
+
+The forecasting engine estimates future hotspot severity and congestion impact.
 
 ---
 
-## Severity Classification
+### Severity Classification
 
-Hotspots are classified according to congestion impact score.
+Hotspots are categorized according to congestion impact score.
 
-\[
-Severity=
-\begin{cases}
-Low & CIS<0.30\\
-Moderate & 0.30 \le CIS <0.60\\
-High & 0.60 \le CIS <0.80\\
-Critical & CIS\ge0.80
-\end{cases}
-\]
+```text
+0.00 ≤ CIS < 0.30  → Low
+
+0.30 ≤ CIS < 0.60  → Moderate
+
+0.60 ≤ CIS < 0.80  → High
+
+0.80 ≤ CIS ≤ 1.00  → Critical
+```
+
+Severity classes support:
+
+- Enforcement prioritization
+- Resource allocation
+- Incident response planning
+- Executive reporting
+
+---
+
+### Model Outputs
+
+The analytics engine produces:
+
+- Spatial Hotspot Clusters
+- Congestion Impact Scores
+- Capacity Loss Estimates
+- Severity Classifications
+- Future Congestion Forecasts
+- Enforcement Recommendations
+- AI-Generated Operational Reports
+
+These outputs collectively enable data-driven urban mobility management and parking enforcement operations.
 
 ---
 
