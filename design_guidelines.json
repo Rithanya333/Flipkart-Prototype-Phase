@@ -1,0 +1,120 @@
+{
+  "project_name": "ParkPulse AI",
+  "domain": "Smart City / Urban Mobility Control Room",
+  "theme": "dark",
+  "archetype": "Performance Pro / Swiss High-Contrast Hybrid",
+  "design_philosophy": "A proactive AI-driven control room prioritizing real-time data visibility over decorative elements. Uses high-contrast typography, monospace data presentation, and a traffic-inspired color palette.",
+  "colors": {
+    "background": {
+      "base": "#08080A",
+      "surface": "#121215",
+      "glass": "rgba(10, 10, 12, 0.75)"
+    },
+    "text": {
+      "primary": "#F8FAFC",
+      "secondary": "#94A3B8",
+      "muted": "#475569",
+      "inverse": "#000000"
+    },
+    "brand": {
+      "primary": "#F59E0B",
+      "primary_hover": "#D97706"
+    },
+    "status": {
+      "critical_red": "#EF4444",
+      "warning_amber": "#F59E0B",
+      "healthy_green": "#10B981",
+      "info_blue": "#3B82F6"
+    },
+    "borders": {
+      "default": "rgba(255, 255, 255, 0.1)",
+      "focus": "rgba(245, 158, 11, 0.5)",
+      "active": "#F59E0B"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "IBM Plex Sans, sans-serif",
+      "body": "IBM Plex Sans, sans-serif",
+      "data": "JetBrains Mono, monospace"
+    },
+    "hierarchy": {
+      "h1": "text-5xl md:text-6xl font-bold tracking-tighter text-white",
+      "h2": "text-3xl md:text-4xl font-semibold tracking-tight text-white",
+      "h3": "text-xl md:text-2xl font-medium tracking-tight text-white",
+      "body": "text-base text-slate-300 leading-relaxed",
+      "data_large": "text-4xl font-mono font-bold tracking-tighter text-amber-500",
+      "data_label": "text-xs font-mono font-medium tracking-widest uppercase text-slate-400"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "grid_dashboard": "grid grid-cols-1 md:grid-cols-12 gap-4",
+    "padding": "p-6 md:p-8"
+  },
+  "surfaces": {
+    "glass_panel": "bg-black/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-lg",
+    "solid_card": "bg-[#121215] border border-white/5 rounded-lg",
+    "metric_widget": "bg-[#0F1115] border-l-2 border-amber-500 rounded-r-lg"
+  },
+  "components": {
+    "button_primary": "bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded px-6 py-2 transition-all",
+    "button_outline": "bg-transparent border border-white/20 hover:border-white/50 text-white rounded px-6 py-2 transition-all",
+    "button_danger": "bg-red-500/10 border border-red-500/50 text-red-500 hover:bg-red-500 hover:text-white rounded px-6 py-2 transition-all",
+    "input_field": "bg-[#0A0A0C] border border-white/10 text-white px-4 py-2 rounded focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all font-mono",
+    "badge_critical": "bg-red-500/20 text-red-500 border border-red-500/30 px-2 py-1 rounded-sm text-xs font-mono uppercase",
+    "badge_warning": "bg-amber-500/20 text-amber-500 border border-amber-500/30 px-2 py-1 rounded-sm text-xs font-mono uppercase"
+  },
+  "pages": {
+    "landing": {
+      "narrative": "Investigative dossier. Deep asphalt background. Overlapping large typography. Start with the problem: 'Bengaluru loses X hours to parking-induced congestion.' Use animated counters.",
+      "methodology": "Transparent breakdown of how the AI works. Use monospace fonts for algorithm names (DBSCAN, K-Means) and raw data snippets."
+    },
+    "dashboard": {
+      "layout": "Full-bleed Leaflet map covering the entire viewport. Floating UI panels on top. Ensure map tiles are 'dark matter' or similar.",
+      "executive_panel": "Floating on the left. Contains total violations, active hotspots, capacity loss. Use 'metric_widget' surface.",
+      "enforcement_queue": "Floating on the right. List of high-priority actions (Tow, Patrol). Items should have critical/warning badges.",
+      "prediction_center": "A drawer or bottom panel showing time-series forecasting. Use Recharts with amber and red lines, no fills, and monospace axis ticks."
+    }
+  },
+  "motion": {
+    "hover": "Subtle border color shifts and slight background lightening. No bouncy transforms.",
+    "live_data": "Pulse animation (opacity 0.5 to 1) for live markers on the map.",
+    "loading": "Use monospace ASCII-style loaders or simple indeterminate progress bars in amber."
+  },
+  "media": {
+    "images": [
+      {
+        "category": "hero_texture",
+        "url": "https://images.unsplash.com/photo-1550684376-efcbd6e3f031",
+        "description": "Dark asphalt texture for landing page background overlays"
+      },
+      {
+        "category": "narrative_context",
+        "url": "https://images.pexels.com/photos/29578401/pexels-photo-29578401.jpeg",
+        "description": "Bengaluru night traffic to emphasize the problem"
+      },
+      {
+        "category": "control_room_reference",
+        "url": "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg",
+        "description": "Modern control room aesthetic reference for the methodology section"
+      }
+    ]
+  },
+  "iconography": {
+    "library": "lucide-react",
+    "instructions": "Use standard lucide icons with consistent 1.5px or 2px stroke weight. Avoid solid/filled icons."
+  },
+  "instructions_to_main_agent": [
+    "Load IBM Plex Sans and JetBrains Mono from Google Fonts.",
+    "Configure tailwind.config.js with the custom colors provided in the 'colors' section.",
+    "Build the dashboard as a true full-screen web app (h-screen, overflow-hidden) with the Leaflet map as the absolute positioned background z-0.",
+    "Use react-leaflet. The map tiles MUST be dark mode (e.g., CartoDB Dark Matter).",
+    "Float the UI panels over the map using absolute positioning and z-10, applying the 'glass_panel' surface classes.",
+    "All data points, metrics, and timestamps MUST use the 'data' typography (JetBrains Mono).",
+    "Charts (Recharts) must be styled to match the dark theme: transparent backgrounds, slate-400 monospace axis text, and amber/red stroke lines.",
+    "Ensure all interactive elements have data-testid attributes for testing.",
+    "Do NOT use standard rounded SaaS cards for the dashboard. Stick to sharp edges or max 8px radius, using the provided surface guidelines.",
+    "The landing page is separate from the dashboard. Users land on the dossier page, then click 'Enter Control Room' to access the dashboard."
+  ]
+}
