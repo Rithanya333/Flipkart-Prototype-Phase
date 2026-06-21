@@ -1,5 +1,5 @@
 # ParkPulse AI
-### Transforming Parking Violations into Urban Mobility Intelligence
+## Transforming Parking Violations into Urban Mobility Intelligence
 
 ---
 
@@ -102,7 +102,7 @@ This intelligence gap results in:
 
 ## Problem Statement
 
-### Poor Visibility on Parking-Induced Congestion
+## Poor Visibility on Parking-Induced Congestion
 
 #### Operational Challenge
 
@@ -125,7 +125,7 @@ These parking violations frequently:
 - Increase queue lengths
 - Cause localized congestion
 
-#### Why It Is Difficult Today
+## Why It Is Difficult Today
 
 Current parking enforcement systems are primarily:
 
@@ -141,7 +141,7 @@ As a result:
 - There is no city-wide intelligence layer for prioritization.
 - Resources are often deployed inefficiently.
 
-#### Challenge
+## Challenge
 
 > How can AI-driven parking intelligence detect illegal parking hotspots and quantify their impact on traffic flow to enable targeted enforcement?
 
@@ -264,19 +264,19 @@ The real question is:
 
 To answer this, ParkPulse AI evaluates:
 
-### Density
+## Density
 
 How concentrated are violations?
 
-### Temporal Activity
+## Temporal Activity
 
 Do violations occur during peak traffic periods?
 
-### Network Criticality
+## Network Criticality
 
 Does the hotspot occur near a critical intersection?
 
-### Recurrence
+## Recurrence
 
 Does the behavior repeat consistently?
 
@@ -348,27 +348,27 @@ This allows decision-makers to move from dashboards to action quickly and confid
 
 The final platform consists of six integrated intelligence modules.
 
-## Executive Command Center
+# Executive Command Center
 
 Provides a city-wide operational overview of parking-induced congestion.
 
-## Hotspot Intelligence Engine
+# Hotspot Intelligence Engine
 
 Interactive geospatial hotspot visualization and analysis.
 
-## Congestion Analytics
+# Congestion Analytics
 
 Quantification of traffic impact and roadway degradation.
 
-## Predictive Intelligence
+# Predictive Intelligence
 
 Forecasting of future hotspot activity and risk.
 
-## Enforcement Intelligence
+# Enforcement Intelligence
 
 Prioritization and recommendation system.
 
-## Scenario Simulator
+# Scenario Simulator
 
 Exploration of intervention strategies and congestion outcomes.
 
@@ -389,7 +389,7 @@ The following screenshots demonstrate how ParkPulse AI transforms raw parking vi
 This view introduces the operational challenge faced by transportation authorities and highlights how illegal parking contributes to congestion, reduced roadway capacity, and inefficient enforcement.
 
 <p align="center">
-  <img src="docs/images/Image_2_FK_The_Problem.png" width="100%">
+  <img src="[docs/images/Image_2_FK_The_Problem.png](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/075445b8563a1e96b259c16a60154b778c4edaab/Images/Image_2_FK_The_Problem.png)" width="100%">
 </p>
 
 ---
