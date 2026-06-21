@@ -12,8 +12,6 @@ Despite its impact, parking enforcement remains largely reactive. Municipal agen
 
 ParkPulse AI addresses this challenge through an AI-driven parking intelligence platform that transforms parking violation records into actionable traffic intelligence. By combining geospatial analytics, hotspot detection, congestion impact modeling, predictive forecasting, and AI-generated operational reporting, the platform enables transportation authorities to proactively identify high-risk zones and optimize enforcement strategies.
 
----
-
 # Imagine This Scenario
 
 It is 8:45 AM on a weekday morning.
@@ -44,8 +42,6 @@ This scenario occurs every day across cities worldwide.
 
 Yet transportation agencies rarely possess the intelligence needed to identify these locations before congestion becomes a problem.
 
----
-
 # Hidden Cost of Parking Violations
 
 Illegal parking is often treated as an enforcement problem.
@@ -71,8 +67,6 @@ Despite this, most cities cannot answer fundamental questions such as:
 - How much roadway capacity is being lost?
 - Where should enforcement resources be deployed tomorrow?
 
----
-
 # Intelligence Gap
 
 Modern cities collect enormous volumes of parking and enforcement data.
@@ -95,9 +89,7 @@ This intelligence gap results in:
 - Limited operational visibility
 - Inefficient congestion management
 
----
-
-## Challenge Statement
+# Challenge Statement
 
 # Problem Statement
 
@@ -144,8 +136,6 @@ As a result:
 
 > How can AI-driven parking intelligence detect illegal parking hotspots and quantify their impact on traffic flow to enable targeted enforcement?
 
----
-
 # Introducing ParkPulse AI
 
 ParkPulse AI is an urban mobility intelligence platform that transforms parking violation records into actionable operational insights.
@@ -160,8 +150,6 @@ The platform combines:
 - Interactive Visualization
 
 to help transportation agencies move from reactive enforcement toward proactive congestion prevention.
-
----
 
 # Our Hypothesis
 
@@ -180,8 +168,6 @@ Others create severe congestion because they occur near:
 - High-volume arterials
 
 If we could identify these locations automatically and quantify their traffic impact, enforcement teams could focus their efforts where they matter most.
-
----
 
 # From Raw Data to Operational Intelligence
 
@@ -209,8 +195,6 @@ flowchart LR
     H --> I[Operational Dashboard]
 ```
 
----
-
 # Understanding the City Through Data
 
 Every parking violation contains valuable spatial information.
@@ -225,8 +209,6 @@ A single record tells us:
 When aggregated across an entire city, these records reveal hidden behavioral patterns.
 
 Our goal was to uncover those patterns automatically.
-
----
 
 # Discovering Hidden Hotspots
 
@@ -250,8 +232,6 @@ Technologies employed:
 - MiniBatch K-Means
 
 These clusters become the foundation for subsequent congestion analysis and predictive intelligence.
-
----
 
 # Beyond Violations: Measuring Impact
 
@@ -281,8 +261,6 @@ Does the behavior repeat consistently?
 
 These factors are combined into a congestion impact model that prioritizes hotspots according to operational severity.
 
----
-
 # Quantifying Roadway Degradation
 
 Illegal parking reduces the effective width of the roadway.
@@ -298,8 +276,6 @@ This reduction translates directly into:
 ParkPulse AI estimates the extent of roadway degradation caused by parking activity and visualizes its effect across the transportation network.
 
 This allows agencies to move beyond simple violation counts and quantify actual operational impact.
-
----
 
 # Looking Into the Future
 
@@ -322,8 +298,6 @@ Forecasts are generated across:
 - Weekly horizons
 
 This enables proactive intervention before congestion becomes visible on the road network.
-
----
 
 # Turning Analytics into Action
 
@@ -509,7 +483,6 @@ Supports ingestion, validation, and processing of parking violation datasets.
 
 ![*Data Ingestion*](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/7670adea3d419616ba1e9c985793a09a1d6748d4/Images/Image_22_Ingest_Page_1.png)
 
-
 # End-to-End Operational Workflow
 
 ```mermaid
@@ -535,9 +508,7 @@ flowchart LR
 
 The resulting intelligence enables transportation authorities to transition from reactive parking enforcement toward proactive congestion management.
 
----
-
-# 17. Technology Stack
+# Technology Stack
 
 | Layer | Technology |
 |---------|------------|
@@ -549,9 +520,7 @@ The resulting intelligence enables transportation authorities to transition from
 | Mapping | Leaflet |
 | AI Reporting | LLM Integration |
 
----
-
-# 18. Solution Architecture
+# Solution Architecture
 
 ```mermaid
 flowchart TB
@@ -577,9 +546,7 @@ flowchart TB
     FastAPI --> MongoDB
 ```
 
----
-
-# 19. Business Impact
+# Business Impact
 
 By transforming parking violations into actionable congestion intelligence, ParkPulse AI enables:
 
@@ -595,8 +562,6 @@ By transforming parking violations into actionable congestion intelligence, Park
 
 Ultimately, ParkPulse AI transforms parking enforcement from a reactive operational activity into an intelligence-driven mobility management system.
 
----
-
-# 20. Contributors
+# Contributors
 
 Rithanya Raj & Anjan Mahapatra
