@@ -342,7 +342,6 @@ To bridge this gap, ParkPulse AI automatically generates intelligence briefings 
 
 This allows decision-makers to move from dashboards to action quickly and confidently.
 
----
 
 # What Was Built
 
@@ -372,7 +371,7 @@ Prioritization and recommendation system.
 
 Exploration of intervention strategies and congestion outcomes.
 
----
+
 
 # Application Walkthrough
 
