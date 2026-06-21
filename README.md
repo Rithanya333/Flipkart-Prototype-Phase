@@ -376,8 +376,6 @@ Exploration of intervention strategies and congestion outcomes.
 
 # Application Walkthrough
 
-# Application Walkthrough
-
 The following screenshots demonstrate how ParkPulse AI transforms raw parking violation records into actionable urban mobility intelligence.
 
 ---
@@ -388,9 +386,7 @@ The following screenshots demonstrate how ParkPulse AI transforms raw parking vi
 
 This view introduces the operational challenge faced by transportation authorities and highlights how illegal parking contributes to congestion, reduced roadway capacity, and inefficient enforcement.
 
-<p align="center">
-  <img src="[docs/images/Image_2_FK_The_Problem.png](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/075445b8563a1e96b259c16a60154b778c4edaab/Images/Image_2_FK_The_Problem.png)" width="100%">
-</p>
+![Problem Statement](https://github.com/Rithanya333/Flipkart-Prototype-Phase/blob/075445b8563a1e96b259c16a60154b778c4edaab/Images/Image_2_FK_The_Problem.png)
 
 ---
 
