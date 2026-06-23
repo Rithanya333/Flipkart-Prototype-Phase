@@ -4,6 +4,8 @@
 
 [https://smart-parking-hub-44.preview.emergentagent.com/]
 
+Link for the demo/prototype : [https://drive.google.com/file/d/1qlwNazX3r9ODzuosE54_278socqm9afv/view?usp=drive_link]
+
 # Executive Summary
 
 Urban congestion is commonly associated with increasing vehicle volumes, inadequate infrastructure, and inefficient traffic management. However, one of the most overlooked contributors to localized traffic disruption is illegal and spillover parking.
